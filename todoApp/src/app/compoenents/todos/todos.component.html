@@ -1,0 +1,26 @@
+<form (ngSubmit)="insertData()">
+    <div class="form-group">
+        <label for="Todo">Todo</label>
+        <input type="text" name="todo" class="form-control" [(ngModel)]="todo.todo">
+    </div>
+    <br>
+    <button mat-raised-button color="primary">Add</button>
+</form>
+<br><br>
+<div class="table" >
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Todo</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let to of todos">
+            <th scope="row">{{to.id}}</th>
+         
+            <td>{{to.details}}</td>
+            <td><button (click)="deleteData(to.id)" mat-raised-button color="warn">Delete</button></td>
+        </tr>
+    </tbody>
+</div>
